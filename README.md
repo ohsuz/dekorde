@@ -6,9 +6,9 @@
     ![image](https://user-images.githubusercontent.com/59340911/136669368-3699970f-e7c4-4216-a8e5-f93bece26637.png)    
       Image Source : [https://baekyeongmin.github.io/dev/einsum/](https://baekyeongmin.github.io/dev/einsum/)
       
-    - [https://pytorch.org/docs/stable/generated/torch.einsum.html](https://pytorch.org/docs/stable/generated/torch.einsum.html). 
-    - [https://baekyeongmin.github.io/dev/einsum/](https://baekyeongmin.github.io/dev/einsum/). 
-    - [https://ita9naiwa.github.io/numeric calculation/2018/11/10/Einsum.html](https://ita9naiwa.github.io/numeric%20calculation/2018/11/10/Einsum.html). 
+    - [https://pytorch.org/docs/stable/generated/torch.einsum.html](https://pytorch.org/docs/stable/generated/torch.einsum.html)
+    - [https://baekyeongmin.github.io/dev/einsum/](https://baekyeongmin.github.io/dev/einsum/)
+    - [https://ita9naiwa.github.io/numeric calculation/2018/11/10/Einsum.html](https://ita9naiwa.github.io/numeric%20calculation/2018/11/10/Einsum.html)
 
 
 - `torch.expand`    
