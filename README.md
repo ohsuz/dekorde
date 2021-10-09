@@ -11,7 +11,7 @@
     - [https://ita9naiwa.github.io/numeric calculation/2018/11/10/Einsum.html](https://ita9naiwa.github.io/numeric%20calculation/2018/11/10/Einsum.html)
 
 
-- `torch.expand`    
+- `torch.tensor.expand`    
     ![image](https://user-images.githubusercontent.com/59340911/136669463-aa6d3679-cf1d-4031-ae66-c122de651bd1.png)
     - [https://pytorch.org/docs/stable/generated/torch.Tensor.expand.html](https://pytorch.org/docs/stable/generated/torch.Tensor.expand.html)
     - [https://seducinghyeok.tistory.com/9](https://seducinghyeok.tistory.com/9)
@@ -21,7 +21,8 @@
     ![image](https://user-images.githubusercontent.com/59340911/136669458-6737c821-3143-4b14-9526-175fa5133a93.png)    
     - [https://pytorch.org/docs/stable/generated/torch.tril.html](https://pytorch.org/docs/stable/generated/torch.tril.html)
 
-
+- `torch.tensor.masked_fill`
+   - https://pytorch.org/docs/stable/generated/torch.Tensor.masked_fill_.html#torch.Tensor.masked_fill_
 ---
 ## ***🔗 Useful Links***
 
