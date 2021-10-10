@@ -6,10 +6,9 @@ class MultiHeadAttentionLayer(torch.nn.Module):
     """
     this could be either masked or not.
     """
-    def __init__(self, embed_size: int, hidden_size: int, heads: int):
+    def __init__(self, embed_size: int, heads: int):
         super().__init__()
         self.embed_size = embed_size
-        self.hidden_size = hidden_size
         self.heads = heads
         # any layers to optimise? - four linear layers in total.
         # TODO - define the shape of the weights.
