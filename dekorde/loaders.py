@@ -5,8 +5,9 @@ import json
 import csv
 
 
-def load_gib2kor() -> List[Tuple[str, str]]:
-    with open(GIBBERISH2KOR_TSV, 'r') as fh:
+def load_gib2kor(mode) -> List[Tuple[str, str]]:
+    TSV_PATH = GIBBERISH2KOR_TSV if mode == 'train' else GIBBERISH2KOR_INFER_TSV
+    with open(TSV_PATH, 'r', encoding="utf-8") as fh:
         tsv_reader = csv.reader(fh, delimiter="\t")
         next(tsv_reader)  # skip the header
         return [
@@ -16,7 +17,7 @@ def load_gib2kor() -> List[Tuple[str, str]]:
 
 
 def load_conf() -> dict:
-    with open(CONF_JSON, 'r') as fh:
+    with open(CONF_JSON, 'r', encoding="utf-8") as fh:
         conf = json.loads(fh.read())
     return conf
 

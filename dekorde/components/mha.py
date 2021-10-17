@@ -47,9 +47,9 @@ class MultiHeadAttentionLayer(torch.nn.Module):
         # (N, L, E) -> (N, L, heads, head_dim)
         N = H_q.shape[0]
         q_len, k_len, v_len = H_q.shape[1], H_k.shape[1], H_v.shape[1]
-        H_q = torch.reshape(N, q_len, self.heads, self.head_dim)
-        H_k = torch.reshape(N, k_len, self.heads, self.head_dim)
-        H_v = torch.reshape(N, v_len, self.heads, self.head_dim)
+        H_q = H_q.reshape(N, q_len, self.heads, self.head_dim)
+        H_k = H_k.reshape(N, k_len, self.heads, self.head_dim)
+        H_v = H_v.reshape(N, v_len, self.heads, self.head_dim)
         
         # Pass h linear layers
         # (N, ?_len, heads, head_dim) -> (N, ?_len, heads, head_dim)
@@ -58,11 +58,11 @@ class MultiHeadAttentionLayer(torch.nn.Module):
         V = self.W_v(H_v)
         
         # Scaled Dot-Product Attention
-        # (N, ?_len, heads, head_dim) -> (N, q_len, embed_size)
+        # (N, ?_len, heads, head_dim) -> (N, q_len, hidden_size)
         attention = self.scaled_dot_product_attention(Q, K, V)
         
         # Pass a linear layer
-        # (N, q_len, embed_size) -> (N, q_len, embed_size)
+        # (N, q_len, hidden_size) -> (N, q_len, hidden_size)
         H_all = self.W_o(attention)
         
         return H_all
@@ -83,10 +83,10 @@ class MultiHeadAttentionLayer(torch.nn.Module):
         attention = torch.einsum("nqhd,nkhd->nhqk", [Q, K])
         
         # Scaled
-        attention = attention / (self.embed_size ** (1/2))
+        attention = attention / (self.hidden_size ** (1/2))
         
         # Mask (Optional)
-        if self.lookahead_mask:
+        if self.lookahead_mask is not None:
             attention = attention.masked_fill(self.lookahead_mask.expand(N, self.heads, L, L) == 0, 
                                               float("-1e20"))
         

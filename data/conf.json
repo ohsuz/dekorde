@@ -1,8 +1,10 @@
 {
+  "seed": 42,
   "hidden_size": 64,
   "heads": 8,
-  "depth": 3,
-  "epochs": 150,
+  "num_layers": 6,
+  "epochs": 300,
+  "dropout": 0.1,
   "max_length": 30,
   "lr": 0.0001
 }
